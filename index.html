@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>CineShield - Preparing For Launch</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="theme-color" content="#6e5076" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=20261104" />
+		<link rel="shortcut icon" href="/assets/images/favicon.ico?v=20261104" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=20261104" />
+		<meta name="apple-mobile-web-app-title" content="CineShield" />
+		<link rel="manifest" href="/assets/images/site.webmanifest?v=20261104" />
+	</head>
+	<body class="is-preload">
+		<!-- Pure CSS Checkbox Controls -->
+		<input type="checkbox" id="toggle-theme" class="sr-only" aria-label="Toggle dark/light mode" />
+		<input type="checkbox" id="toggle-contrast" class="sr-only" aria-label="Toggle high contrast mode" />
+		<input type="checkbox" id="toggle-font" class="sr-only" aria-label="Toggle dyslexia-friendly font" />
+
+		<!-- Floating Navigation Controls -->
+		<nav class="top-controls" aria-label="Display & Accessibility Settings">
+			<label for="toggle-theme" class="control-btn" role="button" tabindex="0">
+				<span class="btn-icon" aria-hidden="true">◐</span>
+				<span class="btn-label">Theme</span>
+			</label>
+			<label for="toggle-contrast" class="control-btn" role="button" tabindex="0">
+				<span class="btn-icon" aria-hidden="true">◑</span>
+				<span class="btn-label">High Contrast</span>
+			</label>
+			<label for="toggle-font" class="control-btn" role="button" tabindex="0">
+				<span class="btn-icon" aria-hidden="true">Aa</span>
+				<span class="btn-label">Dyslexia</span>
+			</label>
+		</nav>
+
+		<!-- Main Page Wrapper -->
+		<div class="page-wrapper">
+			<!-- Header -->
+			<header id="header" class="hero">
+				<div class="brand-badge">
+					<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="72" height="72" aria-hidden="true">
+						<path d="M238.23 11.27a168 168 0 0 0-6.85-1.41 547 547 0 0 0-206.77 0c-3.08.59-5.44 1.08-6.85 1.41A23.1 23.1 0 0 0 0 33.76v60.66c0 20.67 4.94 41.94 14.67 63.23 8.47 18.51 20.67 36.97 35.3 53.39 13.24 14.86 44.25 44.97 78.03 44.97s64.82-30.11 78.05-44.97c14.62-16.41 26.82-34.87 35.28-53.39 9.73-21.28 14.66-42.56 14.66-63.23V33.76a23.06 23.06 0 0 0-17.77-22.48Zm-76.35 121.69c0 3.3-1.54 6.41-4.1 8.41-.66.52-1.25.84-1.25.84l-23.07 13.36a10.7 10.7 0 0 1-10.63.03l-2.1-1.21-21.03-12.17a10.7 10.7 0 0 1-5.33-9.23v-26.78c0-3.8 2.04-7.34 5.32-9.25l23.1-13.37a10.7 10.7 0 0 1 10.66-.01l23.1 13.37a10.8 10.8 0 0 1 5.34 9.26zm55.96-46.14a95 95 0 0 1 3.99 14.92c3.63 19.98 1.15 39.99-7.16 57.97-.22.47-.64.81-1.15.93l-2.83.65c-14.78 3.41-31.53 7.29-47.11 7.29q-3.69 0-7.1-.29a69 69 0 0 1-7.51-1.03 1.69 1.69 0 0 1-.52-3.12l24.51-14.19c12.7-7.24 22.86-18.61 31.07-34.75 4.66-9.17 8.23-18.9 11.31-28.35.39-1.19 2.07-1.22 2.49-.04ZM135.33 214.4l-1.9-2.05c-12.07-12.99-25.76-27.72-33.26-43.71a72 72 0 0 1-2.87-7.03 1.68 1.68 0 0 1 2.43-2.01l13.41 7.76 11.11 6.43c9.1 5.34 19.23 8.42 30.97 9.41q4.05.34 8.39.34c11.78 0 23.68-1.89 35.07-4.25a1.69 1.69 0 0 1 1.62 2.75 95.2 95.2 0 0 1-63.6 32.89 1.7 1.7 0 0 1-1.38-.53Zm-56.02-70.98c-.06 10.57 2.34 20.91 7.36 31.6 6.12 13.05 15.48 24.95 25.24 35.94 1.06 1.19.01 3.05-1.56 2.77l-.18-.03a95 95 0 0 1-60.24-38.6 1.7 1.7 0 0 1-.23-1.47l.99-3.25c5.4-17.69 10.99-35.98 21.02-50.45a71 71 0 0 1 4.64-6 1.68 1.68 0 0 1 2.95 1.1v28.38ZM107.59 75l-15.45 8.94-9.08 5.26c-9.16 5.23-16.89 12.49-23.61 22.19-8.53 12.31-14.08 26.65-18.46 39.99a1.68 1.68 0 0 1-3.19.03 94 94 0 0 1-3.63-13.9c-3.63-20.02-1.14-40.06 7.21-58.07.22-.47.64-.81 1.15-.93l2.79-.64c14.8-3.42 31.57-7.29 47.15-7.29q3.7 0 7.1.29 3.93.33 7.51 1.03c1.53.3 1.87 2.34.52 3.12Zm36.59-46.7c-1.06-1.19-.01-3.05 1.56-2.77h.05a95.2 95.2 0 0 1 60.26 38.63c.3.43.38.97.23 1.46l-.91 2.97c-6 19.63-12.69 41.55-25.72 56.6a1.69 1.69 0 0 1-2.96-1.1V95.74c.07-10.58-2.34-20.92-7.36-31.61-6.11-13.02-15.43-24.87-25.15-35.83m-23.4-3.47 1.98 2.13c12.6 13.56 25.64 27.58 33.12 43.54a72 72 0 0 1 2.87 7.04 1.68 1.68 0 0 1-2.43 2.01l-15.45-8.94-9.07-5.25c-9.1-5.35-19.24-8.42-30.99-9.42a99 99 0 0 0-8.38-.34c-11.77 0-23.65 1.88-35.02 4.24a1.69 1.69 0 0 1-1.62-2.75A95.2 95.2 0 0 1 119.4 24.3c.52-.05 1.02.15 1.38.53"/>
+					</svg>
+
+					<div class="brand-text">
+						<h1 class="brand-title">CineShield</h1>
+						<h2 class="brand-tagline">A New Way To Watch Safely</h2>
+					</div>
+				</div>
+
+				<p>At the moment we are busy creating the new way to enjoy movies, tailored to your preferences.</p>
+				<p hidden>Learn more by clicking the button below.</p>
+			</header>
+
+			<button hidden type="button" id="button-more">What is CineShield</button>
+
+			<!-- Footer -->
+		<footer id="footer">
+				<div class="icons">
+					<a href="https://github.com/cineshield" aria-label="GitHub" width="24" height="24">
+						<svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+							<path d="M217 363c-66-8-113-56-113-117 0-25 9-52 24-70-6-17-5-52 2-66 20-3 47 8 63 22q28-9 64-9c36 0 44 3 62 9 16-14 43-25 63-22 7 13 8 48 2 65q24 30 24 71c0 61-46 108-113 116 17 11 28 35 28 63v52c0 15 13 23 28 17 90-34 161-125 161-237C512 116 397 0 256 0S0 116 0 257c0 111 71 203 166 238 13 5 26-4 26-18v-40q-11 5-24 5c-33 0-52-18-66-51q-8-21-23-23-8-1-8-6c0-6 10-11 20-11q21 0 40 28 14 21 33 21c19 0 20-5 32-16z"/>
+						</svg>
+					</a>
+					<a href="mailto:info@cineshield.org" aria-label="Email" width="24" height="24">
+						<svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+							<path d="M48 64a48 48 0 0 0-29 86l208 156c17 13 41 13 58 0l208-156a48 48 0 0 0-29-86zM0 196v188c0 35 29 64 64 64h384c35 0 64-29 64-64V196L314 345a96 96 0 0 1-116 0z"/>
+						</svg>
+					</a>
+				</div>
+				<p class="copyright">&copy; 2025-{{now.Format "2006"}} CineShield. All rights reserved.</p>
+			</footer>
+		</div>
+	</body>
+</html>

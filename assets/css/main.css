@@ -1,0 +1,327 @@
+/* LOCAL FONTS */
+@font-face {
+  font-family: 'Lexend';
+  src: url('../fonts/Lexend-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ACCESSIBLE HIDDEN INPUTS & CSS VARIABLES */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:root {
+  /* Default: Light Mode */
+  --bg-color: #F9F6F0;
+  --text-color: #241d26;
+  --text-muted: #6e5076;
+  --brand-color: #6e5076;
+  --btn-bg: transparent;
+  --btn-border: #6e5076;
+  --font-main: 'Lexend', system-ui, -apple-system, sans-serif;
+  --border-contrast: transparent;
+  --logo-color: #6e5076;
+}
+
+/* OS Dark Mode Default */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: black;
+    --text-color: #F9F6F0;
+    --text-muted: #F9F6F0;
+    --brand-color: #6e5076;
+    --btn-border: rgba(249, 246, 240, 0.4);
+	--logo-color: #F9F6F0;
+  }
+}
+
+/* OS High Contrast Default */
+@media (prefers-contrast: more) {
+  :root {
+    --bg-color: black !important;
+    --text-color: white !important;
+    --text-muted: white !important;
+    --brand-color: #ffff00 !important;
+    --btn-border: white !important;
+    --border-contrast: 2px solid white !important;
+	--logo-color: #ffff00 !important;
+  }
+}
+
+/* PURE CSS STATE OVERRIDES */
+
+/* Theme Toggle (Inverts light / dark) */
+#toggle-theme:checked ~ .top-controls,
+#toggle-theme:checked ~ .page-wrapper {
+  --bg-color: #121014;
+  --text-color: #F9F6F0;
+  --text-muted: #F9F6F0;
+  --brand-color: #6e5076;
+  --btn-border: #F9F6F0;
+  --logo-color: #F9F6F0;
+}
+
+@media (prefers-color-scheme: dark) {
+  #toggle-theme:checked ~ .top-controls,
+  #toggle-theme:checked ~ .page-wrapper {
+    --bg-color: black;
+    --text-color: #F9F6F0;
+    --text-muted: #F9F6F0;
+    --brand-color: #6e5076;
+    --btn-border: #6e5076;
+	--logo-color: #F9F6F0;
+  }
+}
+
+/* High Contrast Override */
+#toggle-contrast:checked ~ .top-controls,
+#toggle-contrast:checked ~ .page-wrapper {
+  --bg-color: black !important;
+  --text-color: white !important;
+  --text-muted: white !important;
+  --brand-color: #ffff00 !important;
+  --btn-border: white !important;
+  --border-contrast: 2px solid white !important;
+  --logo-color: #ffff00 !important;
+}
+
+/* Dyslexic Font Override */
+#toggle-font:checked ~ .top-controls,
+#toggle-font:checked ~ .page-wrapper {
+  --font-main: 'OpenDyslexic', sans-serif !important;
+}
+
+/* Active Control Button Styles */
+#toggle-theme:checked ~ .top-controls label[for="toggle-theme"],
+#toggle-contrast:checked ~ .top-controls label[for="toggle-contrast"],
+#toggle-font:checked ~ .top-controls label[for="toggle-font"] {
+  background-color: var(--brand-color);
+  color: var(--bg-color);
+  border-color: var(--brand-color);
+  opacity: 1;
+}
+
+.brand-logo path {
+  fill: var(--logo-color);
+  transition: fill 0.25s ease;
+}
+
+/* LAYOUT & NAVIGATION CONTROLS */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 2em;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  position: relative;
+}
+
+/* Top-Right Toolbar */
+.top-controls {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 100;
+  font-family: var(--font-main);
+}
+
+.control-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--btn-bg);
+  color: var(--text-color);
+  border: 1px solid var(--btn-border);
+  opacity: 0.8;
+  border-radius: 9999px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s, background-color 0.2s, color 0.2s, transform 0.15s;
+}
+
+.control-btn:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* BRAND BADGE & TYPOGRAPHY */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 780px;
+  width: 100%;
+  margin: auto 0;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.brand-logo {
+  height: 4.5rem;
+  width: 4.5rem;
+  flex-shrink: 0;
+  fill: var(--logo-color);
+  transition: fill 0.25s ease;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--text-color);
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0.4rem 0 0 0;
+  color: var(--text-muted);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+/* FOOTER */
+#footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+#footer .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#footer .icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--logo-color);
+  opacity: 0.75;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#footer .icons a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footer-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.footer-icon path {
+  fill: var(--logo-color);
+  transition: fill 0.25s ease;
+}
+
+#footer .copyright {
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 1;
+}
+
+/* RESPONSIVE QUERIES */
+@media screen and (max-width: 736px) {
+  .top-controls {
+    top: 1rem;
+    right: 1rem;
+    gap: 0.35rem;
+  }
+
+  .control-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .brand-badge {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .brand-title {
+    font-size: 2.2rem;
+  }
+
+  .brand-tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+}
